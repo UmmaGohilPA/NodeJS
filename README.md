@@ -55,3 +55,5 @@ module.exports = action
 - `import fs from 'fs'`
 
 - Buffer is streaming the file when you something like `readFile`
+
+- Don't use `process.exit(1)` as you won't find out the type of error

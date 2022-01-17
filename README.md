@@ -49,3 +49,9 @@ module.exports = action
 - CommonJS is old, better to use ES modules (introduced at version 10?)
 
 - ES modules/ECMA modules: can you use the extensions .mjs or go into package.json and be able to use .js extension
+
+### File System
+
+- `import fs from 'fs'`
+
+- Buffer is streaming the file when you something like `readFile`

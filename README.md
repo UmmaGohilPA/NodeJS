@@ -69,3 +69,9 @@ module.exports = action
 - npx is like running off one global install; tools you don't want to install but need part of the functionality out of one one them for something else (like scaffolding or deployment tool - don't want to keep it around for too long)
 
 - Don't use NPM and yarn in the same app; different lock files, depending on which you used to do an install
+
+## CLIs
+
+- #! /usr/bin/env node treated as a comment but used for CLIs
+
+- Global commands and CLIs get collection in the bin folder

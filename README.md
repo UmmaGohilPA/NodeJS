@@ -57,3 +57,15 @@ module.exports = action
 - Buffer is streaming the file when you something like `readFile`
 
 - Don't use `process.exit(1)` as you won't find out the type of error
+
+## Packages
+
+- Search, install and build different NPM packages
+
+- `./` for internal modules only
+
+- Global install modules are accessible outside of the app
+
+- npx is like running off one global install; tools you don't want to install but need part of the functionality out of one one them for something else (like scaffolding or deployment tool - don't want to keep it around for too long)
+
+- Don't use NPM and yarn in the same app; different lock files, depending on which you used to do an install

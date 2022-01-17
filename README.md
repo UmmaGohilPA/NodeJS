@@ -75,3 +75,11 @@ module.exports = action
 - #! /usr/bin/env node treated as a comment but used for CLIs
 
 - Global commands and CLIs get collected in the bin folder
+
+## Servers
+
+- express: framework for building servers
+
+- body-parser: middleware that parses incoming requests
+
+- morgan: middleware for loggin incoming requests

@@ -74,4 +74,4 @@ module.exports = action
 
 - #! /usr/bin/env node treated as a comment but used for CLIs
 
-- Global commands and CLIs get collection in the bin folder
+- Global commands and CLIs get collected in the bin folder

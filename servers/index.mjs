@@ -1,31 +1,30 @@
-import http from "http";
+import express from "express";
+import morgan from "morgan";
+import bp from "body-parser";
 
-const host = "localhost";
-const port = 8000;
+const { urlencoded, json } = bp;
 
-const server = http.createServer((req, res) => {
-  if (req.method === "POST") {
-    let body = "";
+const db = {
+  todos: [],
+};
 
-    req.on("data", (chunk) => {
-      body += chunk.toString();
-    });
+const app = express();
 
-    req.on("end", () => {
-      if (req.headers["content-type"] === "application/json") {
-        body = JSON.parse(body);
-      }
+app.use(urlencoded({ extended: true }));
+app.use(json());
+app.use(morgan("dev"));
 
-      console.log(body);
-      res.writeHead(201);
-      res.end("ok");
-    });
-  } else {
-    res.writeHead(200);
-    res.end("hello from my server");
-  }
+app.get("/todo", (req, res) => {
+  res.json({ data: db.todos });
 });
 
-server.listen(port, host, () => {
-  console.log(`Server is running on http://${host}:${port}`);
+app.post("/todo", (req, res) => {
+  const newTodo = { complete: false, id: Date.now(), text: req.body.text };
+  db.todos.push(newTodo);
+
+  res.json({ data: newTodo });
+});
+
+app.listen(8000, () => {
+  console.log("Server on http://localhost:8000");
 });
